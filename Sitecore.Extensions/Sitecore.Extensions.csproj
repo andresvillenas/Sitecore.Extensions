@@ -51,7 +51,16 @@
       <HintPath>..\packages\Sitecore.Client.NoReferences.8.0.141212\lib\NET45\Sitecore.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Kernel.NoReferences.8.0.141212\lib\NET45\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\packages\Sitecore.Kernel.8.0.141212\lib\NET45\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Logging.NoReferences.8.0.141212\lib\NET45\Sitecore.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Update, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Update.NoReferences.8.0.141212\lib\NET45\Sitecore.Update.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Zip, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Zip.NoReferences.8.0.141212\lib\NET45\Sitecore.Zip.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />

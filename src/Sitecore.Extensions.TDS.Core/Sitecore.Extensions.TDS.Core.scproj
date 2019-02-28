@@ -1,0 +1,154 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>33cba1e6-5807-4f5c-92ff-9c931141a903</ProjectGuid>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Sitecore.Extensions.TDS.Core</SingleAssemblyName>
+    <UseWebConfigReplacement>false</UseWebConfigReplacement>
+    <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
+    <LegacyFileReplacement>false</LegacyFileReplacement>
+    <AssemblyName>Sitecore.Extensions.TDS.Core</AssemblyName>
+    <Name>Sitecore.Extensions.TDS.Core</Name>
+    <RootNamespace>Sitecore.Extensions.TDS.Core</RootNamespace>
+    <ManageRoles>False</ManageRoles>
+    <SitecoreDatabase>core</SitecoreDatabase>
+    <AssemblyStatus>Include</AssemblyStatus>
+    <SourceWebVirtualPath>/Sitecore.Extensions.csproj</SourceWebVirtualPath>
+    <SourceWebProject>{6e1ef448-af67-46ef-8ec2-e517c18837dd}|Sitecore.Extensions\Sitecore.Extensions.csproj</SourceWebProject>
+    <SourceWebPhysicalPath>..\..\Sitecore.Extensions</SourceWebPhysicalPath>
+    <EnableCodeGeneration>False</EnableCodeGeneration>
+    <FieldsForCodeGen>Title,Blob,Shared,Unversioned,Default value,Validation,ValidationText,__Long description,__Short description,__Display name,__Hidden,__Read Only,__Sortorder</FieldsForCodeGen>
+    <CodeGenTargetProject>Sitecore.Extensions</CodeGenTargetProject>
+    <BaseTransformFile />
+    <HeaderTransformFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <SitecoreWebUrl>http://sclocal.com</SitecoreWebUrl>
+    <InstallSitecoreConnector>True</InstallSitecoreConnector>
+    <DisableFileDeployment>False</DisableFileDeployment>
+    <LightningDeployMode>False</LightningDeployMode>
+    <SitecoreDeployFolder>C:\inetpub\wwwroot\sclocal\Website</SitecoreDeployFolder>
+    <SitecoreAccessGuid>31cc3335-f518-4083-8de0-d323490941c4</SitecoreAccessGuid>
+    <PackageName>Sitecore.Extensions</PackageName>
+    <PackageAuthor>Andrés Villenas</PackageAuthor>
+    <PackagePublisher>Andrés Villenas</PackagePublisher>
+    <PackageVersion>0.0.1</PackageVersion>
+    <PackageReadme />
+    <SitecoreAssemblyPath />
+    <GeneratePackage>True</GeneratePackage>
+    <SeperateFilesAndItems>False</SeperateFilesAndItems>
+    <PackageExcludeCode>False</PackageExcludeCode>
+    <AddDateTimeToPackageName>True</AddDateTimeToPackageName>
+    <EnableValidations>False</EnableValidations>
+    <ValidationSettingsFilePath>.\Sitecore.Extensions.TDS.Core_Debug.xml</ValidationSettingsFilePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <SitecoreItem Include="sitecore\content.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Context Menues.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Context Menues\Default.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Context Menues\Default\Add to jump list.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Context Menues\Default\Divider 4.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Content Editor\Context Menues\Default\Remove from jump list.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Extensions.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Extensions\Content Editor.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Extensions\Content Editor\Content Tree.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Applications\Extensions\Content Editor\Content Tree\Jump List.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Sitecore Client.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions\Content Editor.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions\Content Editor\Content Tree.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions\Content Editor\Content Tree\Jump List.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions\Content Editor\Content Tree\Jump List\Data.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions\Content Editor\Content Tree\Jump List\Data\Items.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Sitecore.Extensions\Sitecore.Extensions.csproj">
+      <Project>{6e1ef448-af67-46ef-8ec2-e517c18837dd}</Project>
+      <Name>Sitecore.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ExcludedAssemblies Include="Sitecore.Extensions.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
+</Project>
