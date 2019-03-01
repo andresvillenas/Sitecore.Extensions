@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution files", "Solution files", "{D0C9E01F-93E4-422B-9869-6EF81F79E01C}"
 	ProjectSection(SolutionItems) = preProject
 		Nuget.config = Nuget.config
+		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.Extensions.TDS.Core", "Sitecore.Extensions.TDS.Core\Sitecore.Extensions.TDS.Core.scproj", "{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}"
