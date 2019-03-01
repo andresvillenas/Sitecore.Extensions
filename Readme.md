@@ -12,3 +12,6 @@ No releases yet
 
 ### Contributing
 To be defined
+
+### License
+Code and distribution rule by Apache-2.0 license.
