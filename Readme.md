@@ -1,8 +1,8 @@
 ## Sitecore.Extensions
-** Stable channel **
+**Stable channel**
 [![Build Status](https://dev.azure.com/ecuasoft/Sitecore.Extensions/_apis/build/status/Sitecore.Extensions-Pipeline-Release?branchName=master)](https://dev.azure.com/ecuasoft/Sitecore.Extensions/_build/latest?definitionId=9&branchName=master)
 
-** Alpha channel **
+**Alpha channel**
 [![Build Status](https://dev.azure.com/ecuasoft/Sitecore.Extensions/_apis/build/status/Sitecore.Extensions-Pipeline-Release?branchName=develop)](https://dev.azure.com/ecuasoft/Sitecore.Extensions/_build/latest?definitionId=9&branchName=develop)
 
 
