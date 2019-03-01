@@ -2,9 +2,9 @@
 version: 1
 id: {F46C6B6A-134D-48CF-B74D-FD1C702DE17A}
 database: core
-path: /sitecore/templates/Sitecore Client/Extensions/Content Editor/Content Tree/Jump List/Data/Items
+path: /sitecore/templates/Sitecore Client/Extensions/Content Editor/Content Tree/Jump List/Data/Items in Web Database
 parent: {5D4A7D36-1F8D-42D2-B9A1-54F27DD0F43F}
-name: Items
+name: Items in Web Database
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -13,16 +13,16 @@ templatekey: Template field
 field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
 name: Type
 key: type
-content-length: 15
+content-length: 8
 
-Name Value List
+Treelist
 ----field----
 field: {1EB8AE32-E190-44A6-968D-ED904C794EBF}
 name: Source
 key: source
-content-length: 0
+content-length: 16
 
-
+databasename=web
 ----field----
 field: {BE351A73-FCB0-4213-93FA-C302D8AB4F51}
 name: Shared
@@ -162,7 +162,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: fa1e714f-2cd8-4716-bf01-0e2202605251
+revision: 713abf1f-6926-4e37-be00-b7beb67d3a9c
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -191,14 +191,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-fa1e714f-2cd8-4716-bf01-0e2202605251
+713abf1f-6926-4e37-be00-b7beb67d3a9c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 35
 
-20190219T025807:636861418876136547Z
+20190228T195400:636869804406627965Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

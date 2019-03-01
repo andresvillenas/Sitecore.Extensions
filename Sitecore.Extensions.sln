@@ -5,12 +5,12 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Extensions", "Sitecore.Extensions\Sitecore.Extensions.csproj", "{6E1EF448-AF67-46EF-8EC2-E517C18837DD}"
 EndProject
-Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.Extensions.TDS.Core", "Sitecore.Extensions.TDS.Core\Sitecore.Extensions.TDS.Core.scproj", "{33CBA1E6-5807-4F5C-92FF-9C931141A903}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution files", "Solution files", "{D0C9E01F-93E4-422B-9869-6EF81F79E01C}"
 	ProjectSection(SolutionItems) = preProject
 		Nuget.config = Nuget.config
 	EndProjectSection
+EndProject
+Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.Extensions.TDS.Core", "Sitecore.Extensions.TDS.Core\Sitecore.Extensions.TDS.Core.scproj", "{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,12 +22,12 @@ Global
 		{6E1EF448-AF67-46EF-8EC2-E517C18837DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E1EF448-AF67-46EF-8EC2-E517C18837DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E1EF448-AF67-46EF-8EC2-E517C18837DD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33CBA1E6-5807-4F5C-92FF-9C931141A903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33CBA1E6-5807-4F5C-92FF-9C931141A903}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33CBA1E6-5807-4F5C-92FF-9C931141A903}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{33CBA1E6-5807-4F5C-92FF-9C931141A903}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33CBA1E6-5807-4F5C-92FF-9C931141A903}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33CBA1E6-5807-4F5C-92FF-9C931141A903}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
