@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Extensions", "Sitecore.Extensions\Sitecore.Extensions.csproj", "{6E1EF448-AF67-46EF-8EC2-E517C18837DD}"
 EndProject
-Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.Extensions.TDS.Core", "src\Sitecore.Extensions.TDS.Core\Sitecore.Extensions.TDS.Core.scproj", "{33CBA1E6-5807-4F5C-92FF-9C931141A903}"
+Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.Extensions.TDS.Core", "Sitecore.Extensions.TDS.Core\Sitecore.Extensions.TDS.Core.scproj", "{33CBA1E6-5807-4F5C-92FF-9C931141A903}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution files", "Solution files", "{D0C9E01F-93E4-422B-9869-6EF81F79E01C}"
 	ProjectSection(SolutionItems) = preProject
