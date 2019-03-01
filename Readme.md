@@ -1,5 +1,10 @@
 ## Sitecore.Extensions
+** Stable channel **
 [![Build Status](https://dev.azure.com/ecuasoft/Sitecore.Extensions/_apis/build/status/Sitecore.Extensions-Pipeline-Release?branchName=master)](https://dev.azure.com/ecuasoft/Sitecore.Extensions/_build/latest?definitionId=9&branchName=master)
+
+** Alpha channel **
+[![Build Status](https://dev.azure.com/ecuasoft/Sitecore.Extensions/_apis/build/status/Sitecore.Extensions-Pipeline-Release?branchName=develop)](https://dev.azure.com/ecuasoft/Sitecore.Extensions/_build/latest?definitionId=9&branchName=develop)
+
 
 This is a set of utilities for the Sitecore Client interface with the intention to make the developer and content editor more productive.
 
@@ -14,4 +19,4 @@ No releases yet
 To be defined
 
 ### License
-Code and distribution rule by Apache-2.0 license.
+Code and distribution rule by Apache-2.0 license. 
