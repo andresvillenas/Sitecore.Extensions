@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Extensions", "Site
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution files", "Solution files", "{D0C9E01F-93E4-422B-9869-6EF81F79E01C}"
 	ProjectSection(SolutionItems) = preProject
+		License.txt = License.txt
 		Nuget.config = Nuget.config
 		Readme.md = Readme.md
 	EndProjectSection
