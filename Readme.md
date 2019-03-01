@@ -3,7 +3,8 @@
 
 This is a set of utilities for the Sitecore Client interface with the intention to make the developer and content editor more productive.
 
-This project is currently under **development**. You can look around but it is not stable enough. Release will be generated as soon as an stable version is confirmed.
+
+This project is currently under **development**. You can look around it, test it, clone the repository, but it is not stable enough. As soon as there is an stable version, a release version will be generated and will be available for download.
 
 ### Install from release
 
