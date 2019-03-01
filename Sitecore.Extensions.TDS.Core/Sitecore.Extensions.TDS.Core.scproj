@@ -18,12 +18,12 @@
     <RootNamespace>Sitecore.Extensions.TDS.Core</RootNamespace>
     <ManageRoles>False</ManageRoles>
     <SitecoreDatabase>core</SitecoreDatabase>
-    <AssemblyStatus>Exclude</AssemblyStatus>
+    <AssemblyStatus>Include</AssemblyStatus>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <SourceWebVirtualPath>/Sitecore.Extensions.csproj</SourceWebVirtualPath>
     <SourceWebProject>{6e1ef448-af67-46ef-8ec2-e517c18837dd}|Sitecore.Extensions\Sitecore.Extensions.csproj</SourceWebProject>
     <SourceWebPhysicalPath>..\Sitecore.Extensions</SourceWebPhysicalPath>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,6 +62,8 @@
     <SeperateFilesAndItems>False</SeperateFilesAndItems>
     <PackageExcludeCode>False</PackageExcludeCode>
     <AddDateTimeToPackageName>False</AddDateTimeToPackageName>
+    <EnableValidations>False</EnableValidations>
+    <ValidationSettingsFilePath>.\Sitecore.Extensions.TDS.Core_Release.xml</ValidationSettingsFilePath>
   </PropertyGroup>
   <ItemGroup>
     <AssemblyAttributes Include="AssemblyFileVersion">
@@ -70,15 +72,6 @@
     <AssemblyAttributes Include="AssemblyVersion">
       <Value>$(AssemblyVersion)</Value>
     </AssemblyAttributes>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Sitecore.Extensions\Sitecore.Extensions.csproj">
-      <Project>{6e1ef448-af67-46ef-8ec2-e517c18837dd}</Project>
-      <Name>Sitecore.Extensions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ExcludedAssemblies Include="Sitecore.Extensions.dll" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -165,6 +158,15 @@
     <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions\Content Editor\Content Tree\Jump List\Data\Items in Web Database.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sitecore.Extensions\Sitecore.Extensions.csproj">
+      <Project>{6e1ef448-af67-46ef-8ec2-e517c18837dd}</Project>
+      <Name>Sitecore.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ExcludedAssemblies Include="Sitecore.Extensions.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
   <Import Project="..\packages\HedgehogDevelopment.TDS.5.7.0.27\build\HedgehogDevelopment.TDS.targets" Condition="Exists('..\packages\HedgehogDevelopment.TDS.5.7.0.27\build\HedgehogDevelopment.TDS.targets')" />

@@ -36,7 +36,16 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Repository
             if (pinnedItemsField == null)
                 return new List<Item>();
 
-            return pinnedItemsField.GetItems();
+            var targetIDs = pinnedItemsField.TargetIDs;
+
+            var database = Database.GetDatabase(databaseName);
+            var items = new List<Item>();
+            foreach (var targetId in targetIDs)
+            {
+                var item = database.GetItem(targetId);
+                items.Add(item);
+            }
+            return items;
         }
 
         public Item Get(ID id, string databaseName)

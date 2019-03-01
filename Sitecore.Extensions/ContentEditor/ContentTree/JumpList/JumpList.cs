@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Web.UI;
-using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Repository;
@@ -8,12 +7,15 @@ using Sitecore.Resources;
 using Sitecore.Shell.Applications.ContentManager;
 using Sitecore.Shell.Applications.ContentManager.Sidebars;
 using Sitecore.Text;
-using Sitecore.Web.UI.HtmlControls;
-using Sitecore.Web.UI.Sheer;
 
 namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
 {
-    public class JumpList : Sidebar, IMessageHandler
+    /// <summary>
+    /// Jump List control.
+    /// </summary>
+    /// <remarks>Allows to pin an item at the top of the Content Tree of the Content Editor.</remarks>
+    /// <seealso cref="Sitecore.Shell.Applications.ContentManager.Sidebars.Sidebar" />
+    public class JumpList : Sidebar
     {
         private readonly IJumpListRepository _jumpListRepository;
 
@@ -22,47 +24,16 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
             _jumpListRepository = new JumpListRepository();
         }
 
-        public override void ChangeRoot(Item root, Item folder)
-        {
-            base.ChangeRoot(root, folder);
-        }
-
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        public void HandleMessage(Message message)
-        {
-            Assert.ArgumentNotNull((object)message, nameof(message));
-            Log.Info("Message received: " + message, this);
-        }
-
         public override void Initialize(ContentEditorForm form, Item folder, Item root)
         {
             AddCSS();
             AddMainControl();
         }
 
-        public override bool OnDataContextChanged(DataContext context, Message message)
-        {
-            return base.OnDataContextChanged(context, message);
-        }
-
-        public override void SetActiveItem(ID selectedID)
-        {
-            base.SetActiveItem(selectedID);
-        }
-
-        public string GetMainControl()
+        public virtual string GetMainControl()
         {
             var listString =
-                "<div id =\"JumpListPanel\" class=\"scJumpList\" " +
+                "<div id =\"JumpListPanel\" class=\"scContentTree scJumpList\" " +
                 "onclick=\"javascript:if (window.scGeckoActivate) window.scGeckoActivate(); return scContent.onTreeClick(this, event)\" " +
                 "oncontextmenu=\"javascript:return scContent.onTreeContextMenu(this, event)\"     " +
                 "onkeydown=\"javascript:return scContent.onTreeKeyDown(this, event)\">" +
@@ -72,25 +43,6 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
                 "</div>";
 
             return listString;
-        }
-
-        public override string ToString()
-        {
-            return string.Empty;
-        }
-
-        public override void Update(ID selectedID, bool force)
-        {
-            base.Update(selectedID, force);
-        }
-
-
-        /// <summary>Refreshes the sidebar.</summary>
-        /// <param name="selected">The selected.</param>
-        public virtual void Refresh()
-        {
-            string text = this.RenderList();
-            Context.ClientPage.ClientResponse.Eval("scContent.refreshPinList()");
         }
 
         public virtual string RenderList()
@@ -104,6 +56,16 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
             }
 
             return output.InnerWriter.ToString();
+        }
+
+        public override string ToString()
+        {
+            return string.Empty;
+        }
+
+        public virtual void Refresh()
+        {
+            Context.ClientPage.ClientResponse.Eval("scContent.refreshPinList()");
         }
 
         private void RenderPinItem(HtmlTextWriter output, Item item, string inner)
@@ -146,8 +108,7 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
         private string GetNodeId(string shortId)
         {
             Assert.ArgumentNotNullOrEmpty(shortId, nameof(shortId));
-            //return Id + "_Node_" + shortId;
-            return string.Empty;
+            return "Tree_Node_" + shortId;
         }
 
         private static string GetStyle(Item item)
@@ -205,18 +166,13 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
             return imageBuilder.ToString();
         }
 
-        private void AddJavascripts()
-        {
-            // Nothing
-        }
-
         private void AddCSS()
         {
             var cssFile = "/sitecore/shell/Themes/Standard/Default/Extensions.css";
             Context.ClientPage.Header.Controls.Add(new LiteralControl($"<link rel=\"stylesheet\" type=\"text/css\" href=\"{cssFile}\"/>"));
         }
 
-        public void AddMainControl()
+        private void AddMainControl()
         {
             var mainControl = GetMainControl();
             GetPlaceholder().Controls.AddAt(0, new LiteralControl(mainControl));

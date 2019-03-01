@@ -1,7 +1,3 @@
 ﻿.scJumpList {
-    background: #fff url("/sitecore/shell/themes/standard/Images/Content Editor/TreeViewGutter.png") repeat-y;
     height: auto;
-    overflow: auto;
-    position: relative;
-    padding-left: 10px;
 }

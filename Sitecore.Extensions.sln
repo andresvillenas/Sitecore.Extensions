@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution files", "Solution 
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.Extensions.TDS.Core", "Sitecore.Extensions.TDS.Core\Sitecore.Extensions.TDS.Core.scproj", "{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Extensions.Test", "Sitecore.Extensions.Test\Sitecore.Extensions.Test.csproj", "{8743A809-9E59-4F0E-A3CE-6DC63FB2975A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C30ADF5D-0A1C-4621-9224-E9ED6F3C434A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8743A809-9E59-4F0E-A3CE-6DC63FB2975A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8743A809-9E59-4F0E-A3CE-6DC63FB2975A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8743A809-9E59-4F0E-A3CE-6DC63FB2975A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8743A809-9E59-4F0E-A3CE-6DC63FB2975A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
