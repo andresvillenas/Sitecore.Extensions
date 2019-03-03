@@ -1,16 +1,19 @@
 ﻿using System.Linq;
-using Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Repository;
 using Sitecore.Shell.Framework.Commands;
 
 namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Commands
 {
+    /// <summary>
+    /// Command that allows to remove an item from the JumpList
+    /// </summary>
+    /// <seealso cref="Sitecore.Shell.Framework.Commands.Command" />
     public class RemoveFromJumpList : Command
     {
-        private readonly IJumpListRepository _jumpListRepository;
+        private readonly JumpList _jumpList;
 
         public RemoveFromJumpList()
         {
-            _jumpListRepository = new JumpListRepository();
+            _jumpList = new JumpList();
         }
 
         public override CommandState QueryState(CommandContext context)
@@ -26,9 +29,9 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Commands
             if (item == null)
                 return CommandState.Hidden;
 
-            var notRemoved = _jumpListRepository.Get(item.ID, item.Database.Name) != null;
+            var itemNotRemoved = _jumpList.Exist(item);
 
-            return notRemoved ? CommandState.Enabled : CommandState.Hidden;
+            return itemNotRemoved ? CommandState.Enabled : CommandState.Hidden;
         }
 
         public override void Execute(CommandContext context)
@@ -38,10 +41,7 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Commands
             if (item == null)
                 return;
 
-            _jumpListRepository.Remove(item);
-
-            var jumpList = new JumpList();
-            Context.ClientPage.ClientResponse.SetInnerHtml("JumpListActualSize", jumpList.RenderList());
+            _jumpList.Remove(item);
         }
     }
 }

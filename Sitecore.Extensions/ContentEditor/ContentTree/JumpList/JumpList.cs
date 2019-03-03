@@ -4,19 +4,21 @@ using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Repository;
 using Sitecore.Resources;
-using Sitecore.Shell.Applications.ContentManager;
 using Sitecore.Shell.Applications.ContentManager.Sidebars;
 using Sitecore.Text;
+using Sitecore.Web.UI.HtmlControls;
+using Sitecore.Web.UI.Sheer;
 
 namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
 {
     /// <summary>
-    /// Jump List control.
+    /// JumpList control.
     /// </summary>
     /// <remarks>Allows to pin an item at the top of the Content Tree of the Content Editor.</remarks>
     /// <seealso cref="Sitecore.Shell.Applications.ContentManager.Sidebars.Sidebar" />
     public class JumpList : Sidebar
     {
+        public const string JumpListActualSizeDivId = "JumpListActualSize";
         private readonly IJumpListRepository _jumpListRepository;
 
         public JumpList()
@@ -24,28 +26,58 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
             _jumpListRepository = new JumpListRepository();
         }
 
-        public override void Initialize(ContentEditorForm form, Item folder, Item root)
+        public virtual void Initialize()
         {
             AddCSS();
+            AddJS();
             AddMainControl();
         }
 
-        public virtual string GetMainControl()
+        public void Add(Item item)
+        {
+            if (Exist(item))
+                return;
+
+            _jumpListRepository.Add(item);
+            OnDataContextChanged(null, null);
+        }
+
+        public bool Exist(Item item)
+        {
+            return _jumpListRepository.Exist(item);
+        }
+
+        public void Remove(Item item)
+        {
+            if (!Exist(item))
+                return;
+
+            _jumpListRepository.Remove(item);
+            OnDataContextChanged(null, null);
+        }
+
+        public override bool OnDataContextChanged(DataContext context, Message message)
+        {
+            Context.ClientPage.ClientResponse.SetInnerHtml("JumpListActualSize", RenderInnerContent());
+            return true;
+        }
+
+        protected virtual string Render()
         {
             var listString =
-                "<div id =\"JumpListPanel\" class=\"scContentTree scJumpList\" " +
-                "onclick=\"javascript:if (window.scGeckoActivate) window.scGeckoActivate(); return scContent.onTreeClick(this, event)\" " +
-                "oncontextmenu=\"javascript:return scContent.onTreeContextMenu(this, event)\"     " +
+                "<div id =\"JumpListPanel\" class=\"scJumpList\" " +
+                "onclick=\"javascript:if (window.scGeckoActivate) window.scGeckoActivate(); return scContent.onJumpListClick(this, event)\" " +
+                "oncontextmenu=\"javascript:return scContent.onJumpListContextMenu(this, event)\"     " +
                 "onkeydown=\"javascript:return scContent.onTreeKeyDown(this, event)\">" +
-                "<div id='JumpListActualSize'>" +
-                $"{RenderList()}" +
+                "<div id='" + JumpListActualSizeDivId + "'>" +
+                $"{RenderInnerContent()}" +
                 "</div>" +
                 "</div>";
 
             return listString;
         }
 
-        public virtual string RenderList()
+        protected virtual string RenderInnerContent()
         {
             var output = new HtmlTextWriter(new StringWriter());
 
@@ -58,14 +90,22 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
             return output.InnerWriter.ToString();
         }
 
-        public override string ToString()
+        private void AddJS()
         {
-            return string.Empty;
+            var jsFile = "/sitecore/shell/Applications/Extensions/JumpList.js";
+            Context.ClientPage.Header.Controls.Add(new LiteralControl($"<script src=\"{jsFile}\" type=\"text/javascript\"></script>"));
         }
 
-        public virtual void Refresh()
+        private void AddCSS()
         {
-            Context.ClientPage.ClientResponse.Eval("scContent.refreshPinList()");
+            var cssFile = "/sitecore/shell/Applications/Extensions/JumpList.css";
+            Context.ClientPage.Header.Controls.Add(new LiteralControl($"<link rel=\"stylesheet\" type=\"text/css\" href=\"{cssFile}\"/>"));
+        }
+
+        private void AddMainControl()
+        {
+            var mainControl = Render();
+            GetPlaceholder().Controls.AddAt(0, new LiteralControl(mainControl));
         }
 
         private void RenderPinItem(HtmlTextWriter output, Item item, string inner)
@@ -108,7 +148,7 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
         private string GetNodeId(string shortId)
         {
             Assert.ArgumentNotNullOrEmpty(shortId, nameof(shortId));
-            return "Tree_Node_" + shortId;
+            return "JumpList_Item_" + shortId;
         }
 
         private static string GetStyle(Item item)
@@ -164,18 +204,6 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
                 imageBuilder.Alt = item.Help.Text;
 
             return imageBuilder.ToString();
-        }
-
-        private void AddCSS()
-        {
-            var cssFile = "/sitecore/shell/Themes/Standard/Default/Extensions.css";
-            Context.ClientPage.Header.Controls.Add(new LiteralControl($"<link rel=\"stylesheet\" type=\"text/css\" href=\"{cssFile}\"/>"));
-        }
-
-        private void AddMainControl()
-        {
-            var mainControl = GetMainControl();
-            GetPlaceholder().Controls.AddAt(0, new LiteralControl(mainControl));
         }
     }
 }
