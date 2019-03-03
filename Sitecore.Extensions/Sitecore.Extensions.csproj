@@ -83,14 +83,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sitecore\shell\Themes\Standard\Default\Extensions.css" />
+    <Content Include="sitecore\shell\Applications\Extensions\JumpList.css" />
+    <Content Include="sitecore\shell\Applications\Extensions\JumpList.js" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContentEditor\ContentEditorPlaceHolders.cs" />
     <Compile Include="ContentEditor\ContentTree\AddContentEditorExtensions.cs" />
     <Compile Include="ContentEditor\ContentTree\JumpList\Commands\AddToJumpList.cs" />
     <Compile Include="ContentEditor\ContentTree\JumpList\Commands\RemoveFromJumpList.cs" />
+    <Compile Include="ContentEditor\ContentTree\JumpList\Events\ItemEventHandler.cs" />
     <Compile Include="ContentEditor\ContentTree\JumpList\JumpList.cs" />
     <Compile Include="ContentEditor\ContentTree\JumpList\Repository\IJumpListRepository.cs" />
     <Compile Include="ContentEditor\ContentTree\JumpList\Repository\JumpListRepository.cs" />
@@ -107,6 +108,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

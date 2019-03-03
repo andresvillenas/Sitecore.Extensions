@@ -1,0 +1,18 @@
+﻿.scJumpList {
+    background: #fff url("/sitecore/shell/themes/standard/Images/Content Editor/TreeViewGutter.png") repeat-y;
+    height: fit-content;
+    position: relative;
+    padding-left: 10px;
+    border-bottom: solid;
+    border-bottom-color: #ededef;
+    border-bottom-width: 1px;
+}
+
+.scContentTreeContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#ContentTreeActualSize {
+    padding-top: 5px !important;
+}
