@@ -25,13 +25,40 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Repository
             { CoreDatabaseName, ItemsInCoreFieldGuid }
         };
 
+        public void Add(Item item)
+        {
+            Add(item.ID, item.Database.Name);
+        }
+
+        public void Clean(string databaseName)
+        {
+            var itemsPerDatabaseField = GetFieldByDatabaseName(databaseName, out Item jumpListItem);
+            if (itemsPerDatabaseField == null)
+                return;
+
+            try
+            {
+                jumpListItem.Editing.BeginEdit();
+
+                itemsPerDatabaseField.Value = string.Empty;
+
+                jumpListItem.Editing.EndEdit();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message, this);
+                jumpListItem.Editing.CancelEdit();
+            }
+        }
+
+        public Item Get(ID id, string databaseName)
+        {
+            return GetAll(databaseName).FirstOrDefault(i => i.ID == id);
+        }
+
         public IList<Item> GetAll(string databaseName)
         {
-            var jumpListItem = GetJumpListItem();
-
-            var fieldToUse = DatabaseFieldMap[databaseName];
-
-            MultilistField pinnedItemsField = jumpListItem.Fields[fieldToUse];
+            var pinnedItemsField = GetFieldByDatabaseName(databaseName, out Item _);
 
             if (pinnedItemsField == null)
                 return new List<Item>();
@@ -43,46 +70,12 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Repository
             foreach (var targetId in targetIDs)
             {
                 var item = database.GetItem(targetId);
-                items.Add(item);
+                if (item == null)
+                    Log.Warn($"Item with id '{targetId}' not found.", this);
+                else
+                    items.Add(item);
             }
             return items;
-        }
-
-        public Item Get(ID id, string databaseName)
-        {
-            return GetAll(databaseName).FirstOrDefault(i => i.ID == id);
-        }
-
-        public void Add(Item item)
-        {
-            Add(item.ID, item.Database.Name);
-        }
-
-        private void Add(ID id, string databaseName)
-        {
-            var pinListItem = GetJumpListItem();
-            if (pinListItem == null)
-                return;
-
-            try
-            {
-                pinListItem.Editing.BeginEdit();
-
-                var fieldToUse = DatabaseFieldMap[databaseName];
-
-                MultilistField pinnedItemsField = pinListItem.Fields[fieldToUse];
-                if (pinnedItemsField == null)
-                    return;
-
-                pinnedItemsField.Add(id.ToString());
-
-                pinListItem.Editing.EndEdit();
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.Message, this);
-                pinListItem.Editing.CancelEdit();
-            }
         }
 
         public void Remove(Item item)
@@ -90,57 +83,68 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Repository
             Remove(item.ID, item.Database.Name);
         }
 
-        private void Remove(ID id, string databaseName)
+        public bool Exist(Item item)
         {
-            var pinListItem = GetJumpListItem();
-            if (pinListItem == null)
+            return Exist(item.ID, item.Database.Name);
+        }
+
+        private void Add(ID id, string databaseName)
+        {
+            var itemsPerDatabaseField = GetFieldByDatabaseName(databaseName, out Item jumpListItem);
+            if (itemsPerDatabaseField == null)
                 return;
 
             try
             {
-                pinListItem.Editing.BeginEdit();
+                jumpListItem.Editing.BeginEdit();
 
-                var fieldToUse = DatabaseFieldMap[databaseName];
+                itemsPerDatabaseField.Add(id.ToString());
 
-                MultilistField pinnedItemsField = pinListItem.Fields[fieldToUse];
-                if (pinnedItemsField == null)
-                    return;
-
-                pinnedItemsField.Remove(id.ToString());
-
-                pinListItem.Editing.EndEdit();
+                jumpListItem.Editing.EndEdit();
             }
             catch (Exception e)
             {
                 Log.Error(e.Message, this);
-                pinListItem.Editing.CancelEdit();
+                jumpListItem.Editing.CancelEdit();
             }
         }
 
-        public void Clean(string databaseName)
+        private void Remove(ID id, string databaseName)
         {
-            var pinListItem = GetJumpListItem();
-            if (pinListItem == null)
+            var itemsPerDatabaseField = GetFieldByDatabaseName(databaseName, out Item jumpListItem);
+            if (itemsPerDatabaseField == null)
                 return;
 
             try
             {
-                pinListItem.Editing.BeginEdit();
+                jumpListItem.Editing.BeginEdit();
 
-                var fieldToUse = DatabaseFieldMap[databaseName];
+                itemsPerDatabaseField.Remove(id.ToString());
 
-                MultilistField pinnedItemsField = pinListItem.Fields[fieldToUse];
-                if (pinnedItemsField == null)
-                    return;
-                pinnedItemsField.Value = string.Empty;
-
-                pinListItem.Editing.EndEdit();
+                jumpListItem.Editing.EndEdit();
             }
             catch (Exception e)
             {
                 Log.Error(e.Message, this);
-                pinListItem.Editing.CancelEdit();
+                jumpListItem.Editing.CancelEdit();
             }
+        }
+
+        private bool Exist(ID id, string databaseName)
+        {
+            var itemsPerDatabaseField = GetFieldByDatabaseName(databaseName, out Item _);
+            return itemsPerDatabaseField != null && itemsPerDatabaseField.Contains(id.ToString());
+        }
+
+        private MultilistField GetFieldByDatabaseName(string databaseName, out Item jumpListItem)
+        {
+            jumpListItem = GetJumpListItem();
+
+            var fieldToUse = DatabaseFieldMap[databaseName];
+
+            MultilistField pinnedItemsField = jumpListItem.Fields[fieldToUse];
+
+            return pinnedItemsField;
         }
 
         private Item GetJumpListItem()

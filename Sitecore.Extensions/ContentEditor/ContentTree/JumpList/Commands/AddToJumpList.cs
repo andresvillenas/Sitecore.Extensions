@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Specialized;
+﻿using System.Collections.Specialized;
 using System.Linq;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
-using Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Repository;
 using Sitecore.Shell.Framework.Commands;
 using Sitecore.Web.UI.Sheer;
 
 namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Commands
 {
-    [Serializable]
+    /// <summary>
+    /// Command that allows to add an item to the JumpList
+    /// </summary>
+    /// <seealso cref="Sitecore.Shell.Framework.Commands.Command" />
     public class AddToJumpList : Command
     {
-        private readonly IJumpListRepository _jumpListRepository;
+        private readonly JumpList _jumpList;
 
         public AddToJumpList()
         {
-            _jumpListRepository = new JumpListRepository();
+            _jumpList = new JumpList();
         }
 
         public override CommandState QueryState(CommandContext context)
@@ -32,32 +33,32 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Commands
             if (item == null)
                 return CommandState.Hidden;
 
-            var alreadyAdded = _jumpListRepository.Get(item.ID, item.Database.Name) != null;
+            var alreadyAdded = _jumpList.Exist(item);
 
             return alreadyAdded ? CommandState.Hidden : CommandState.Enabled;
         }
 
         public override void Execute(CommandContext context)
         {
-            Assert.ArgumentNotNull((object)context, nameof(context));
+            Assert.ArgumentNotNull(context, nameof(context));
             if (context.Items.Length != 1)
                 return;
-            NameValueCollection parameters = new NameValueCollection();
-            parameters["items"] = this.SerializeItems(context.Items);
-            Context.ClientPage.Start((object)this, "Run", parameters);
+            var parameters = new NameValueCollection
+            {
+                ["items"] = SerializeItems(context.Items)
+            };
+            Context.ClientPage.Start(this, "Run", parameters);
         }
 
         protected void Run(ClientPipelineArgs args)
         {
-            Assert.ArgumentNotNull((object)args, nameof(args));
+            Assert.ArgumentNotNull(args, nameof(args));
             if (!SheerResponse.CheckModified())
                 return;
-            var items = this.DeserializeItems(args.Parameters["items"]);
-            using (new StatisticDisabler(StatisticDisablerState.ForItemsWithoutVersionOnly))
-                _jumpListRepository.Add(items.FirstOrDefault());
+            var items = DeserializeItems(args.Parameters["items"]);
 
-            var jumpList = new JumpList();
-            Context.ClientPage.ClientResponse.SetInnerHtml("JumpListActualSize", jumpList.RenderList());
+            using (new StatisticDisabler(StatisticDisablerState.ForItemsWithoutVersionOnly))
+                _jumpList.Add(items.FirstOrDefault());
         }
     }
 }
