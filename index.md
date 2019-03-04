@@ -5,8 +5,8 @@ Currently the project is under development and only delivers alpha versions for 
 - Enjoy 😎!
 
 ### Features
-#### [JumpList](features/jumplist/JumpList.md)
-<img src="features/jumplist/Thumbnail.png" style="width:250px; height:auto"/>
+#### [JumpList](features/jumplist/jumpList.md)
+<img src="features/jumplist/thumbnail.png" style="width:250px; height:auto"/>
 
 Allows to add a shortcut of an item at the top of the content tree of the Content Editor.
 
