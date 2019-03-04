@@ -11,7 +11,7 @@ This project is currently under **development**. You can look around it, test it
 
 ### How to install
 Currently the project is under development and only delivers alpha versions for testing.<br/>
-- Download the latest **alpha version**: [Sitecore.Extensions (v0.0.1.82)](https://github.com/andresvillenas/Sitecore.Extensions/releases/tag/untagged-6bb983d9991b610b2892)
+- Download the latest **version** at the [releases page](https://github.com/andresvillenas/Sitecore.Extensions/releases).
 - Install the package using the Installation Wizard of Sitecore.
 - Enjoy 😎!
 
