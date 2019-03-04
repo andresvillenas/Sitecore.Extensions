@@ -5,7 +5,7 @@ Currently the project is under development and only delivers alpha versions for 
 - Enjoy 😎!
 
 ### Features
-#### [JumpList](features/jumplist/jumplist.md)
+#### [JumpList](features/jumplist/JumpList.md)
 <img src="https://raw.githubusercontent.com/andresvillenas/Sitecore.Extensions/gh-pages/features/jumplist/Thumbnail.PNG" style="width:250px; height:auto"/>
 
 Allows to add a shortcut of an item at the top of the content tree of the Content Editor.

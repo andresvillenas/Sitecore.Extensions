@@ -8,7 +8,7 @@ Component for the [Sitecore Content Editor](https://doc.sitecore.com/users/90/si
 - If an item is deleted, the shortcut is also removed.
 
 ### Screen recording
-<img src="jumplist-screenrecord.gif" style="width:800px; height:auto"/>
+<img src="JumpList-ScreenRecord.gif" style="width:800px; height:auto"/>
 
 ### Report an issue
 If you have a problem to report about this component, please use this [link](https://github.com/andresvillenas/Sitecore.Extensions/issues/new), and select the label **jumplist**.
