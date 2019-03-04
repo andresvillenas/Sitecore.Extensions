@@ -11,4 +11,4 @@ Component for the [Sitecore Content Editor](https://doc.sitecore.com/users/90/si
 <img src="JumpList-ScreenRecord.gif" style="width:800px; height:auto"/>
 
 ### Report an issue
-If you have a problem to report about this component, please use this [link](https://github.com/andresvillenas/Sitecore.Extensions/issues/new), and select the label **jumplist**.
+If you have found a problem of this component, please [create an issue](https://github.com/andresvillenas/Sitecore.Extensions/issues/new), and select the label **jumplist** before to submit it.
