@@ -16,5 +16,9 @@ Allows to publish an item directly from the context menu of the content tree.
 
 **More features to come soon**
 
-### Reporting bugs
-Please [create a new issue](https://github.com/andresvillenas/Sitecore.Extensions/issues). It would reviewed as soon as possible.
+### How to contribute
+#### Report an issue
+If you have found an problem for one of the existing features, or you want an idea of a new feature, please [create a new issue](https://github.com/andresvillenas/Sitecore.Extensions/issues).
+
+#### Contribute with new features or fixes
+To contribute with new feature or fixes for the existing ones, please, visit the [How to contribute](contributing/how-to-contribute.md) guide.
