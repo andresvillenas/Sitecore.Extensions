@@ -12,7 +12,7 @@ Set of utilities for the Sitecore interface to make developers and editors more 
 Allows to add a shortcut of an item at the top of the content tree of the Content Editor.
 <hr>
 
-#### [Publish Item in Context Menu](https://andresvillenas.github.io/Sitecore.Extensions/features/jumplist/JumpList.html)
+#### [Publish Item in Context Menu](https://andresvillenas.github.io/Sitecore.Extensions/features/publishitem/publishitem.html)
 <img src="https://raw.githubusercontent.com/andresvillenas/Sitecore.Extensions/gh-pages/features/publishitem/Publish-Item.PNG"><br/>
 Allows to publish an item directly from the context menu at the content tree.
 <hr>
