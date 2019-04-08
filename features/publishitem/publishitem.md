@@ -7,7 +7,7 @@ Version 0.0.2.0
 ### Main features
 - Allows to publish an item directly from the context menu at the content tree.
 
-### Screen recording
+### Screen capture
 <img src="Publish-Item.PNG" style="width:354px; height:auto"/>
 
 ### Report an issue
