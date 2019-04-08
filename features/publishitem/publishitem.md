@@ -1,4 +1,4 @@
-## JumpList
+## Publish Item in Context Menu
 Component for the [Sitecore Content Editor](https://doc.sitecore.com/users/90/sitecore-experience-platform/en/the-content-editor.html) that allows to publish an item directly from the context menu of the Content Tree.
 
 ### Available since
