@@ -1,14 +1,17 @@
 ### How to install
-Currently the project is under development and only delivers alpha versions for testing.<br/>
-- Download the latest **alpha version**: [Sitecore.Extensions (v0.0.1.82)](https://github.com/andresvillenas/Sitecore.Extensions/releases/tag/untagged-6bb983d9991b610b2892)
+- Download the latest version at the [releases page](https://github.com/andresvillenas/Sitecore.Extensions/releases).
 - Install the package using the Installation Wizard of Sitecore.
 - Enjoy 😎!
 
 ### Features
-#### [JumpList](features/jumplist/JumpList.md)
-<img src="https://raw.githubusercontent.com/andresvillenas/Sitecore.Extensions/gh-pages/features/jumplist/Thumbnail.PNG" style="width:250px; height:auto"/>
-
+#### [JumpList](features/jumplist/jumplist.md)
+<img src="features/jumplist/Thumbnail.PNG" style="width:250px; height:auto"/><br/>
 Allows to add a shortcut of an item at the top of the content tree of the Content Editor.
+<hr>
+
+#### [Publish Item in Context Menu](features/publishitem/publishitem.md)
+<img src="features/publishitem/Publish-Item.PNG"><br/>
+Allows to publish an item directly from the context menu of the content tree.
 <hr>
 
 **More features to come soon**
