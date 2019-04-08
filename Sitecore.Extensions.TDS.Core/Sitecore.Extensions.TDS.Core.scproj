@@ -99,12 +99,14 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Context Menues\Default\Add to jump list.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Context Menues\Default\Divider 4.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Content Editor\Context Menues\Default\Remove from jump list.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Extensions.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -120,6 +122,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Applications\Extensions\Content Editor\Content Tree\Jump List.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -151,11 +154,17 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions\Content Editor\Content Tree\Jump List\Data\Items in Core Database.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions\Content Editor\Content Tree\Jump List\Data\Items in Master Database.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions\Content Editor\Content Tree\Jump List\Data\Items in Web Database.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Sitecore Client\Extensions\Content Editor\Content Tree\Jump List\Data\User.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
   </ItemGroup>

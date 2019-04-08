@@ -1,6 +1,6 @@
-﻿using System.Collections.Specialized;
+﻿using System;
+using System.Collections.Specialized;
 using System.Linq;
-using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Shell.Framework.Commands;
 using Sitecore.Web.UI.Sheer;
@@ -33,9 +33,16 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Commands
             if (item == null)
                 return CommandState.Hidden;
 
-            var alreadyAdded = _jumpList.Exist(item);
-
-            return alreadyAdded ? CommandState.Hidden : CommandState.Enabled;
+            try
+            {
+                var alreadyAdded = _jumpList.Exist(item);
+                return alreadyAdded ? CommandState.Hidden : CommandState.Enabled;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Error checking if the {nameof(AddToJumpList)} command should be enabled", ex, this);
+                return CommandState.Hidden;
+            }
         }
 
         public override void Execute(CommandContext context)
@@ -55,10 +62,19 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Commands
             Assert.ArgumentNotNull(args, nameof(args));
             if (!SheerResponse.CheckModified())
                 return;
+
             var items = DeserializeItems(args.Parameters["items"]);
 
-            using (new StatisticDisabler(StatisticDisablerState.ForItemsWithoutVersionOnly))
+            try
+            {
                 _jumpList.Add(items.FirstOrDefault());
+            }
+            catch (Exception ex)
+            {
+                var message = "An error has ocurred adding the item to the JumpList.";
+                Log.Error(message, ex, this);
+                Context.ClientPage.ClientResponse.Alert(message);
+            }
         }
     }
 }

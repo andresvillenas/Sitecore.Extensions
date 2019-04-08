@@ -1,0 +1,14 @@
+﻿---
+ID: "65bf5859-3424-4d7b-9d10-6e788b54c959"
+Parent: "100f19fe-29b8-4686-bbfc-5b153cf653e2"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/templates/Sitecore Client/Extensions/Content Editor/Content Tree
+DB: core
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180506T011802Z

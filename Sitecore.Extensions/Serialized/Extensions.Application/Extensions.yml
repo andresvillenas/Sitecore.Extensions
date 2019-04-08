@@ -1,0 +1,14 @@
+﻿---
+ID: "0d1bd152-b00e-419f-a33c-ec1ffd1c4df6"
+Parent: "c74ac643-53c8-4f1e-9508-840cdc72aaca"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/content/Applications/Extensions
+DB: core
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190219T021032Z

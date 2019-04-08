@@ -1,79 +1,51 @@
 ----item----
 version: 1
-id: {7EB6D120-44C1-458C-8F20-8B9A26C4E250}
+id: {EAF8E6BD-0D36-4ADB-B437-A82BDF772CD3}
 database: core
 path: /sitecore/content/Applications/Extensions/Content Editor/Content Tree/Jump List
 parent: {09BCC8DA-9FA8-4AD3-893E-928A923A314E}
 name: Jump List
 master: {00000000-0000-0000-0000-000000000000}
-template: {A8683095-7CB3-4EC5-939B-20D1F9A3C9B1}
-templatekey: Jump List
+template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
+templatekey: Folder
 
-----field----
-field: {F46C6B6A-134D-48CF-B74D-FD1C702DE17A}
-name: Items in Web Database
-key: items in web database
-content-length: 77
-
-{EB2E4FFD-2761-4653-B052-26A64D385227}|{3D6658D8-A0BF-4E75-B3E2-D050FABCF4E1}
 ----version----
 language: en
 version: 1
-revision: dc8e308c-1be6-4728-9881-c18987ddc512
+revision: 6028c22b-f71b-4526-9ae8-acf7daa4b0be
 
-----field----
-field: {80652879-87B8-43CF-B66F-0B53FDEE872C}
-name: Items in Master Database
-key: items in master database
-content-length: 155
-
-{393387C4-D63C-4942-9A1A-361AF0FE2A56}|{7A897D4F-30D5-4723-8F25-7325D9DA0F6A}|{3C1715FE-6A13-4FCF-845F-DE308BA9741D}|{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
-----field----
-field: {C4C8B147-F3C0-46CD-9456-3DA064A0B22F}
-name: Items in Core Database
-key: items in core database
-content-length: 38
-
-{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20180506T012604Z
+20190331T040544Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
 key: __created by
 content-length: 14
 
-sitecore\admin
+sitecore\Admin
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-dc8e308c-1be6-4728-9881-c18987ddc512
+6028c22b-f71b-4526-9ae8-acf7daa4b0be
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 35
 
-20190228T213739:636869866593485941Z
+20190331T042032:636896028322972641Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
 content-length: 14
 
-sitecore\admin
+sitecore\Admin

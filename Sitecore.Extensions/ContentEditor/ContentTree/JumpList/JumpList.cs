@@ -38,13 +38,13 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
             if (Exist(item))
                 return;
 
-            _jumpListRepository.Add(item);
+            _jumpListRepository.Add(Context.User, item);
             OnDataContextChanged(null, null);
         }
 
         public bool Exist(Item item)
         {
-            return _jumpListRepository.Exist(item);
+            return _jumpListRepository.Exist(Context.User, item);
         }
 
         public void Remove(Item item)
@@ -52,13 +52,13 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
             if (!Exist(item))
                 return;
 
-            _jumpListRepository.Remove(item);
+            _jumpListRepository.Remove(Context.User, item);
             OnDataContextChanged(null, null);
         }
 
         public override bool OnDataContextChanged(DataContext context, Message message)
         {
-            Context.ClientPage.ClientResponse.SetInnerHtml("JumpListActualSize", RenderInnerContent());
+            Context.ClientPage.ClientResponse.SetInnerHtml(JumpListActualSizeDivId, RenderInnerContent());
             return true;
         }
 
@@ -81,7 +81,7 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList
         {
             var output = new HtmlTextWriter(new StringWriter());
 
-            var pinnedItems = _jumpListRepository.GetAll(Client.ContentDatabase.Name);
+            var pinnedItems = _jumpListRepository.GetAll(Context.User, Client.ContentDatabase.Name);
             foreach (var pinnedItem in pinnedItems)
             {
                 RenderPinItem(output, pinnedItem, string.Empty);

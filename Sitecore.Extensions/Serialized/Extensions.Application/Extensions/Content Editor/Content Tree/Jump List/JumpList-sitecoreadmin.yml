@@ -1,0 +1,26 @@
+﻿---
+ID: "b2e5eb85-17c2-4df6-a2bb-ada7c2f1bdef"
+Parent: "7f0a1b0e-9694-41e7-8d0c-4386680269a2"
+Template: "a8683095-7cb3-4ec5-939b-20d1f9a3c9b1"
+Path: "/sitecore/content/Applications/Extensions/Content Editor/Content Tree/Jump List/JumpList-sitecoreadmin"
+DB: core
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190407T202819Z
+    - ID: "306f9098-f453-437b-885e-0de37fc1899f"
+      Hint: User
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "80652879-87b8-43cf-b66f-0b53fdee872c"
+      Hint: Items in Master Database
+      Type: Treelist
+      Value: 
