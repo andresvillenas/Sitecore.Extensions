@@ -1,0 +1,86 @@
+﻿---
+ID: "f46c6b6a-134d-48cf-b74d-fd1c702de17a"
+Parent: "5d4a7d36-1f8d-42d2-b9a1-54f27dd0f43f"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Sitecore Client/Extensions/Content Editor/Content Tree/Jump List/Data/Items in Web Database
+DB: core
+SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: databasename=web
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Treelist
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 10
+- ID: "be351a73-fcb0-4213-93fa-c302d8ab4f51"
+  Hint: Shared
+  Type: checkbox
+  Value: 0
+Languages:
+- Language: da
+  Fields:
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
+    Hint: Title
+    Value: Type
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Type
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20141212T145142:635539927026389212Z"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
+  Fields:
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
+    Hint: Title
+    Value: Typ
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Typ
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20141212T145016:635539926162037553Z"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20180506T012322:636611666025226135Z"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "ja-JP"
+  Fields:
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
+    Hint: Title
+    Value: タイプ
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: タイプ
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20141212T145302:635539927824332643Z"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

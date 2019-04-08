@@ -43,12 +43,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Configy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Configy.1.0.0\lib\net45\Configy.dll</HintPath>
+    </Reference>
+    <Reference Include="Kamsar.WebConsole, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kamsar.WebConsole.2.0.1\lib\net40\Kamsar.WebConsole.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroCHAP, Version=1.2.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicroCHAP.1.2.2.2\lib\net45\MicroCHAP.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Rainbow, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rainbow.Core.2.0.6\lib\net452\Rainbow.dll</HintPath>
+    </Reference>
+    <Reference Include="Rainbow.Storage.Sc, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rainbow.Storage.Sc.2.0.6\lib\net452\Rainbow.Storage.Sc.dll</HintPath>
+    </Reference>
+    <Reference Include="Rainbow.Storage.Yaml, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rainbow.Storage.Yaml.2.0.6\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Client, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Client.NoReferences.8.0.141212\lib\NET45\Sitecore.Client.dll</HintPath>
@@ -81,10 +99,49 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Unicorn, Version=4.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unicorn.Core.4.0.8\lib\net452\Unicorn.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="sitecore\shell\Applications\Extensions\JumpList.css" />
     <Content Include="sitecore\shell\Applications\Extensions\JumpList.js" />
+    <Content Include="App_Config\Include\Rainbow.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.IdentityServer.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.DeployedContentEditorWarnings.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Dilithium.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
+    <None Include="App_Config\Include\zSitecoreExtensions\Unicorn.Configs.Default.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
+    <Content Include="App_Config\Include\zSitecoreExtensions\Unicorn.Configs.PublishItem.config" />
+    <None Include="App_Config\Include\zSitecoreExtensions\Unicorn.Configs.JumpList.config" />
+    <Content Include="Serialized\Extensions.Application\Extensions.yml" />
+    <Content Include="Serialized\Extensions.Application\Extensions\Content Editor.yml" />
+    <Content Include="Serialized\Extensions.Application\Extensions\Content Editor\Content Tree.yml" />
+    <Content Include="Serialized\Extensions.Application\Extensions\Content Editor\Content Tree\Jump List.yml" />
+    <Content Include="Serialized\Extensions.Application\Extensions\Content Editor\Content Tree\Jump List\JumpList-sitecoreadmin.yml" />
+    <Content Include="Serialized\Extensions.Templates\Extensions.yml" />
+    <Content Include="Serialized\Extensions.Templates\Extensions\Content Editor.yml" />
+    <Content Include="Serialized\Extensions.Templates\Extensions\Content Editor\Content Tree.yml" />
+    <Content Include="Serialized\Extensions.Templates\Extensions\Content Editor\Content Tree\Jump List.yml" />
+    <Content Include="Serialized\Extensions.Templates\Extensions\Content Editor\Content Tree\Jump List\Data.yml" />
+    <Content Include="Serialized\Extensions.Templates\Extensions\Content Editor\Content Tree\Jump List\Data\Items in Core Database.yml" />
+    <Content Include="Serialized\Extensions.Templates\Extensions\Content Editor\Content Tree\Jump List\Data\Items in Master Database.yml" />
+    <Content Include="Serialized\Extensions.Templates\Extensions\Content Editor\Content Tree\Jump List\Data\Items in Web Database.yml" />
+    <Content Include="Serialized\Extensions.Templates\Extensions\Content Editor\Content Tree\Jump List\Data\User.yml" />
+    <Content Include="Serialized\JumpList.AddToJumpList\Add to jump list.yml" />
+    <Content Include="Serialized\JumpList.Divider4\Divider 4.yml" />
+    <Content Include="Serialized\JumpList.Divider5\Divider 5.yml" />
+    <Content Include="Serialized\JumpList.RemoveFromJumpList\Remove from jump list.yml" />
+    <Content Include="Serialized\PublishItem\Publish Item.yml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

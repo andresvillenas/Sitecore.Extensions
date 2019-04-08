@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using Sitecore.Diagnostics;
 using Sitecore.Shell.Framework.Commands;
 
 namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Commands
@@ -29,9 +31,17 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Commands
             if (item == null)
                 return CommandState.Hidden;
 
-            var itemNotRemoved = _jumpList.Exist(item);
+            try
+            {
+                var itemNotRemoved = _jumpList.Exist(item);
 
-            return itemNotRemoved ? CommandState.Enabled : CommandState.Hidden;
+                return itemNotRemoved ? CommandState.Enabled : CommandState.Hidden;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Error checking if the {nameof(RemoveFromJumpList)} command should be enabled.", ex, this);
+                return CommandState.Hidden;
+            }
         }
 
         public override void Execute(CommandContext context)
@@ -41,7 +51,16 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree.JumpList.Commands
             if (item == null)
                 return;
 
-            _jumpList.Remove(item);
+            try
+            {
+                _jumpList.Remove(item);
+            }
+            catch (Exception ex)
+            {
+                var message = "An error has ocurred removing the item from the JumpList.";
+                Log.Error(message, ex, this);
+                Context.ClientPage.ClientResponse.Alert(message);
+            }
         }
     }
 }
