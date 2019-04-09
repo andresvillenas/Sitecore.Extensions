@@ -1,6 +1,8 @@
 ## Sitecore.Extensions
 Set of utilities for the Sitecore interface to make developers and editors more productive.
 
+<a href="https://codeclimate.com/github/andresvillenas/Sitecore.Extensions/maintainability"><img src="https://api.codeclimate.com/v1/badges/f807cd8b98c34eebc8db/maintainability" /></a>
+
 ### How to install
 - Download the latest version at the [releases page](https://github.com/andresvillenas/Sitecore.Extensions/releases).
 - Install the package using the Installation Wizard of Sitecore.
