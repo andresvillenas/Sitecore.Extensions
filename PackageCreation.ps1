@@ -12,15 +12,18 @@ $package.Metadata.Readme = 'Set of utilities for the Sitecore interface to make 
 # Get the Unicorn Configuration(s) we want to package
 $configs = Get-UnicornConfiguration "Sitecore.Extensions" 
 
-# Pipe the configs into New-UnicornItemSource 
-# to process them and add them to the package project
-# (without -Project, this would emit the source object(s) 
-#   which can be manually added with $pkg.Sources.Add())
+# Add the items synchronized in Unicorn
 $configs | New-UnicornItemSource -Project $package
 
-# Add content of the Console folder (except the source files) located in the site folder to the package
-$source = Get-ChildItem -exclude *.cs -Path "$AppPath\bin\Sitecore.Extensions.dll" -Recurse -File | New-ExplicitFileSource -Name "DLLs"
-$package.Sources.Add($source);
+# Add the files required
+$source1 = Get-ChildItem -exclude *.cs -Path "$AppPath\bin\Sitecore.Extensions.dll" -Recurse -File | New-ExplicitFileSource -Name "Files"
+$package.Sources.Add($source1);
+
+$source2 = Get-ChildItem -exclude *.cs -Path "$AppPath\App_Config\Include\zSitecoreExtensions" -Recurse -File | New-ExplicitFileSource -Name "Files"
+$package.Sources.Add($source2);
+
+$source3 = Get-ChildItem -exclude *.cs -Path "$AppPath\sitecore\shell\Applications\Extensions" -Recurse -File | New-ExplicitFileSource -Name "Files"
+$package.Sources.Add($source3);
 
 # Save package
 Export-Package -Project $package -Path "$($package.Name)-$($package.Metadata.Version).zip" -Zip
