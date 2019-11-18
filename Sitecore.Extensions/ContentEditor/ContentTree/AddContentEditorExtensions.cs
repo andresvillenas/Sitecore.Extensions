@@ -1,4 +1,5 @@
 ﻿using Sitecore.Pipelines;
+using Sitecore.Shell.Applications.ContentEditor.Pipelines.RenderContentEditor;
 
 namespace Sitecore.Extensions.ContentEditor.ContentTree
 {
@@ -6,7 +7,10 @@ namespace Sitecore.Extensions.ContentEditor.ContentTree
     {
         public void Process(PipelineArgs args)
         {
-            new JumpList.JumpList().Initialize(); // TODO: Change the way the controls are injected
+            if ((args as RenderContentEditorArgs)?.Item != null) // Only when the content editor is rendered.
+            {
+                new JumpList.JumpList().Initialize(); // TODO: Change the way the controls are injected
+            }
         }
     }
 }
