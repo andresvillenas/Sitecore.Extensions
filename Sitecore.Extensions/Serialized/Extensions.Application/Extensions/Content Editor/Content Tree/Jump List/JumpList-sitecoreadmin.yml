@@ -24,3 +24,7 @@ Languages:
       Hint: Items in Master Database
       Type: Treelist
       Value: 
+    - ID: "c4c8b147-f3c0-46cd-9456-3da064a0b22f"
+      Hint: Items in Core Database
+      Type: Treelist
+      Value: "{72E110BF-3E5C-4927-A80A-7EFD634081C0}"

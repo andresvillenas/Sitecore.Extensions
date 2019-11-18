@@ -6,7 +6,7 @@ $package.Sources.Clear();
 
 $package.Metadata.Author = "Andrés Villenas";
 $package.Metadata.Publisher = "Ecuasoft";
-$package.Metadata.Version = "0.0.2.0";
+$package.Metadata.Version = "0.0.2.1";
 $package.Metadata.Readme = 'Set of utilities for the Sitecore interface to make developers and editors more productive.'
 
 # Get the Unicorn Configuration(s) we want to package

@@ -22,6 +22,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "package", "package", "{3D09DD0A-9C0B-403F-9DDC-8BF25CFA1D26}"
 	ProjectSection(SolutionItems) = preProject
 		package\Sitecore.Extensions-0.0.2.0.zip = package\Sitecore.Extensions-0.0.2.0.zip
+		package\Sitecore.Extensions-0.0.2.1.zip = package\Sitecore.Extensions-0.0.2.1.zip
 	EndProjectSection
 EndProject
 Global
