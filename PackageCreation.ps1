@@ -19,7 +19,7 @@ $configs | New-UnicornItemSource -Project $package
 $source1 = Get-ChildItem -exclude *.cs -Path "$AppPath\bin\Sitecore.Extensions.dll" -Recurse -File | New-ExplicitFileSource -Name "Files"
 $package.Sources.Add($source1);
 
-$source2 = Get-ChildItem -exclude *.cs -Path "$AppPath\App_Config\Include\zSitecoreExtensions" -Recurse -File | New-ExplicitFileSource -Name "Files"
+$source2 = Get-ChildItem -exclude Unicorn.* -Path "$AppPath\App_Config\Include\zSitecoreExtensions" -Recurse -File | New-ExplicitFileSource -Name "Files"
 $package.Sources.Add($source2);
 
 $source3 = Get-ChildItem -exclude *.cs -Path "$AppPath\sitecore\shell\Applications\Extensions" -Recurse -File | New-ExplicitFileSource -Name "Files"

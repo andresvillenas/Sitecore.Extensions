@@ -118,11 +118,11 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
-    <Content Include="App_Config\Include\zSitecoreExtensions\Unicorn.Configs.Default.config" />
+    <None Include="App_Config\Include\zSitecoreExtensions\Unicorn.Configs.Default.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Include\zSitecoreExtensions\Unicorn.Configs.PublishItem.config" />
-    <Content Include="App_Config\Include\zSitecoreExtensions\Unicorn.Configs.JumpList.config" />
+    <None Include="App_Config\Include\zSitecoreExtensions\Unicorn.Configs.PublishItem.config" />
+    <None Include="App_Config\Include\zSitecoreExtensions\Unicorn.Configs.JumpList.config" />
     <Content Include="Serialized\Extensions.Application\Extensions.yml" />
     <Content Include="Serialized\Extensions.Application\Extensions\Content Editor.yml" />
     <Content Include="Serialized\Extensions.Application\Extensions\Content Editor\Content Tree.yml" />
